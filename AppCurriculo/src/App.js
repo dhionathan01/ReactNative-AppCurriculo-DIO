@@ -2,6 +2,7 @@ import React from "react";
 import { View, StyleSheet, Image, Text, Alert, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import profileFoto from './assets/ProfileImg.jpg';
+import Card from './components/Card';
 
 const App = () => {
   function redeSocial(redes_social) {
@@ -34,33 +35,15 @@ const App = () => {
             </TouchableOpacity>
             <TouchableOpacity onPress={()=> redeSocial('linkedin')}>
             <Icon name="linkedin" size={30}/>
-            </TouchableOpacity>
-            
-            
+            </TouchableOpacity>  
           </View>
         </View>
-
-        <View style={style.cardContainer}>
-          <View style={style.card}>
-            <View style={style.cardHead}>
-              <Text>Experiências</Text>
-            </View>
-            <View style={style.cardContent}>
-              <Text style={style.cardContentText}> BC DIO HTML/CSS/JS/ReactNative</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={style.cardContainer}>
-          <View style={style.card}>
-            <View style={style.cardHead}>
-              <Text>Ensino</Text>
-            </View>
-            <View style={style.cardContent}>
-              <Text style={style.cardContentText}>Graduação Análise e Desenvolvimento de Sistemas</Text>
-            </View>
-          </View>
-        </View>
+        <Card titulo='Formação Acadêmica'>
+          <Text style={style.cardContentText}> Graduação Análise e desenvolvimento De sistemas</Text>
+        </Card>
+        <Card titulo='Experiências'>
+        <Text style={style.cardContentText}> BC DIO HTML/CSS/JS/ReactNative</Text>
+        </Card>
       </View>
     </>
   );
@@ -100,24 +83,6 @@ const style = StyleSheet.create({
     marginTop: 20,
 
   },
-  cardContainer: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  card: {
-    width: '60%',
-    borderRadius: 5,
-    borderSize: 2,
-    borderColor: '#939393',
-    padding: 10,
-    backgroundColor: '#FFF',
-  },
-  cardContent: {
-    marginTop: 10,
-  },
-
   cardContentText: {
     color: '#939393',
     marginBottom: 10,
